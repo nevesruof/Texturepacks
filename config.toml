@@ -1,0 +1,39 @@
+[bot]
+name = "TextureRelay"
+user_agent = "TextureRelay/1.0 (Discord resource pack discovery)"
+database = "data/texturebot.sqlite3"
+curated_file = "curated.json"
+
+[discovery]
+interval_minutes = 30
+page_size = 25
+max_queue_per_section = 500
+detail_budget_per_source = 8
+request_timeout_seconds = 20
+
+[sources]
+modrinth = true
+packsmc = true
+curseforge = true
+texturehub = true
+curated = true
+
+[sections.inventarios]
+label = "Texturas de inventarios"
+channel_env = "INVENTORY_CHANNEL_ID"
+cooldown_minutes = 120
+queries = ["inventory", "inventario", "gui"]
+include = ["inventory", "inventories", "inventario", "inventarios", "gui"]
+exclude = ["bedrock", "mcpe"]
+versions = []
+color = "#8B5CF6"
+
+[sections.boxpvp]
+label = "Packs de BoxPvP"
+channel_env = "BOXPVP_CHANNEL_ID"
+cooldown_minutes = 120
+queries = ["boxpvp", "box pvp"]
+include = ["boxpvp", "box pvp", "box-pvp", "box_pvp"]
+exclude = ["bedrock", "mcpe"]
+versions = []
+color = "#F97316"
